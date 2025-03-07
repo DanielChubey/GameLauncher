@@ -19,3 +19,4 @@ C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\refint\GameLauncher
 C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\GameLauncher.pdb
 C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\GameLauncher.genruntimeconfig.cache
 C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\ref\GameLauncher.dll
+C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\GameLauncher.sourcelink.json

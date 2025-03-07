@@ -1,6 +1,7 @@
 using System;
 using System.Windows;
-using System.Windows.Threading;  // For DispatcherTimer
+using System.Windows.Media.Animation;
+using System.Windows.Threading;
 
 namespace GameLauncher
 {
@@ -8,52 +9,56 @@ namespace GameLauncher
     {
         private DispatcherTimer timer;
         private int progress = 0;
+        private string[] statusMessages = {
+            "Checking system requirements...",
+            "Checking components...",
+            "Loading assets...",
+            "Preparing game...",
+            "Starting game..."
+        };
+        private int statusIndex = 0;
 
         public LoadingWindow()
         {
             InitializeComponent();
-            
-            // Initialize Timer
+
+            // Timer for smooth progress
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(50); // Adjust the interval for speed of progress
+            timer.Interval = TimeSpan.FromMilliseconds(1200);
             timer.Tick += Timer_Tick;
             timer.Start();
-            
-            // Initial status text
-            StatusText.Text = "Checking updates...";
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (progress < 100)
             {
-                progress++;
-                ProgressBar.Value = progress;
+                progress += 20; // Increase progress smoothly
 
-                // Update Status Text Dynamically
-                if (progress < 30)
+                // Animate the progress bar
+                DoubleAnimation animation = new DoubleAnimation(progressBar.Value, progress, TimeSpan.FromSeconds(1));
+                progressBar.BeginAnimation(System.Windows.Controls.Primitives.RangeBase.ValueProperty, animation);
+
+                // Update the status text
+                if (statusIndex < statusMessages.Length)
                 {
-                    StatusText.Text = "Checking updates...";
-                }
-                else if (progress < 60)
-                {
-                    StatusText.Text = "Setting up environment...";
-                }
-                else if (progress < 90)
-                {
-                    StatusText.Text = "Starting game...";
-                }
-                else
-                {
-                    StatusText.Text = "Complete!";
+                    statusText.Text = statusMessages[statusIndex++];
                 }
             }
             else
             {
-                timer.Stop(); 
-                MainWindow mainWindow = new MainWindow(); 
-                mainWindow.Show();
-                this.Close(); 
+                timer.Stop();
+
+                // Smoothly fade out the loading screen
+                DoubleAnimation fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(1));
+                fadeOut.Completed += (s, a) =>
+                {
+                    this.Hide();
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
+                };
+                this.BeginAnimation(Window.OpacityProperty, fadeOut);
             }
         }
     }
