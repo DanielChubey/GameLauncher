@@ -29,7 +29,6 @@
                                     BorderThickness="2" CornerRadius="15">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
-
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
@@ -42,7 +41,6 @@
                     </Button.Template>
                 </Button>
 
-               
                 <Button Content="Settings"
                         Width="200" Height="50"
                         HorizontalAlignment="Left"
@@ -57,7 +55,6 @@
                                     BorderThickness="2" CornerRadius="15">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
-
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
@@ -70,7 +67,6 @@
                     </Button.Template>
                 </Button>
 
-               
                 <Button Content="Add Game"
                         Width="200" Height="50"
                         HorizontalAlignment="Left"
@@ -86,7 +82,6 @@
                                     BorderThickness="2" CornerRadius="15">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
-
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
@@ -111,7 +106,11 @@
                        Foreground="White"
                        Margin="0,20,0,0"/>
 
-           
+            <!-- Section to display added games -->
+            <StackPanel x:Name="GameListPanel" VerticalAlignment="Top" Margin="10,60,10,0">
+                <!-- Dynamically populated games will appear here -->
+            </StackPanel>
+
             <Button x:Name="PlayButton"
                     Content="Play"
                     Width="150" Height="50"
@@ -129,7 +128,6 @@
                                 BorderThickness="2" CornerRadius="15">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
-
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
@@ -137,11 +135,10 @@
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter TargetName="border" Property="Background" Value="#7D3C98"/>
                             </Trigger>
-                        </ControlTemplate.Triggers>
+                        </ControlTemplate.Triggers> <!-- Correct closing here -->
                     </ControlTemplate>
                 </Button.Template>
             </Button>
         </Grid>
-
     </Grid>
 </Window>
