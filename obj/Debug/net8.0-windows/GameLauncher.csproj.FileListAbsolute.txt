@@ -20,3 +20,9 @@ C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\GameLauncher.pdb
 C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\GameLauncher.genruntimeconfig.cache
 C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\ref\GameLauncher.dll
 C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\GameLauncher.sourcelink.json
+C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\GameLauncher.csproj.AssemblyReference.cache
+C:\Users\DuNiK\Desktop\GameLauncher\bin\Debug\net8.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\DuNiK\Desktop\GameLauncher\bin\Debug\net8.0-windows\System.Drawing.Common.dll
+C:\Users\DuNiK\Desktop\GameLauncher\bin\Debug\net8.0-windows\System.Private.Windows.Core.dll
+C:\Users\DuNiK\Desktop\GameLauncher\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\DuNiK\Desktop\GameLauncher\obj\Debug\net8.0-windows\GameLaun.EC92FEF9.Up2Date

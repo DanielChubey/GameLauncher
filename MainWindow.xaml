@@ -5,72 +5,143 @@
         Background="#1A1A1A">
 
     <Grid>
-        <!-- Title -->
-        <TextBlock Text="Welcome to the Game Launcher!"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Top"
-                   FontSize="24"
-                   Foreground="White"
-                   Margin="0,20,0,0"/>
+        <!-- Define two columns: one for sidebar and one for main content -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/> <!-- Sidebar width -->
+            <ColumnDefinition Width="*"/>   <!-- Main content area -->
+        </Grid.ColumnDefinitions>
 
-        <!-- Select Game Button -->
-        <Button Content="Select Game"
-                Width="150" Height="50"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="18"
-                Foreground="White"
-                Click="SelectGame_Click">
+        <!-- Sidebar -->
+        <Grid x:Name="Sidebar" Background="#1A1A1A" VerticalAlignment="Stretch" Grid.Column="0">
+            <StackPanel>
+                <!-- Home Button -->
+                <Button Content="Home"
+                        Width="200" Height="50"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="18"
+                        Foreground="White"
+                        Background="#9B59B6"
+                        Margin="0,20,0,10">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border" Background="#9B59B6" BorderBrush="#8E44AD"
+                                    BorderThickness="2" CornerRadius="15">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
 
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" Background="#3498DB" BorderBrush="#2980B9"
-                            BorderThickness="2" CornerRadius="15">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#7D3C98"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
 
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#2980B9"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#1F618D"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+                <!-- Settings Button -->
+                <Button Content="Settings"
+                        Width="200" Height="50"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="18"
+                        Foreground="White"
+                        Background="#9B59B6"
+                        Margin="0,10,0,10">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border" Background="#9B59B6" BorderBrush="#8E44AD"
+                                    BorderThickness="2" CornerRadius="15">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
 
-        <!-- Play Button (Initially Disabled) -->
-        <Button x:Name="PlayButton"
-                Content="Play"
-                Width="150" Height="50"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Bottom"
-                Margin="0,0,30,30"
-                FontSize="18"
-                Foreground="White"
-                IsEnabled="False"
-                Click="PlayButton_Click">
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#7D3C98"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
 
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" Background="#9B59B6" BorderBrush="#8E44AD"
-                            BorderThickness="2" CornerRadius="15">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
+                <!-- Add Game Button (Styled Like Select Game) -->
+                <Button Content="Add Game"
+                        Width="200" Height="50"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontSize="18"
+                        Foreground="White"
+                        Background="#9B59B6"
+                        Margin="0,10,0,20"
+                        Click="AddGame_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border" Background="#9B59B6" BorderBrush="#8E44AD"
+                                    BorderThickness="2" CornerRadius="15">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
 
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#7D3C98"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#7D3C98"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- Main Content (Right side) -->
+        <Grid Grid.Column="1">
+            <!-- Title -->
+            <TextBlock Text="Welcome to the Game Launcher!"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       FontSize="24"
+                       Foreground="White"
+                       Margin="0,20,0,0"/>
+
+            <!-- Play Button (Initially Disabled) -->
+            <Button x:Name="PlayButton"
+                    Content="Play"
+                    Width="150" Height="50"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,30,30"
+                    FontSize="18"
+                    Foreground="White"
+                    IsEnabled="False"
+                    Click="PlayButton_Click">
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="#9B59B6" BorderBrush="#8E44AD"
+                                BorderThickness="2" CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#7D3C98"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
 
     </Grid>
 </Window>

@@ -7,38 +7,38 @@ namespace GameLauncher
 {
     public partial class MainWindow : Window
     {
-        private string selectedGamePath = "";
+        private string selectedGamePath = "";  // Holds the selected game path
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        // Select Game Button Click
-        private void SelectGame_Click(object sender, RoutedEventArgs e)
+        // Add Game Button Click (Functionality same as Select Game)
+        private void AddGame_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = "Executable Files (*.exe)|*.exe",
-                Title = "Select a Game to Launch"
+                Filter = "Executable Files (*.exe)|*.exe",  // Filters only executable files
+                Title = "Select a Game to Add"
             };
 
             if (openFileDialog.ShowDialog() == true)
             {
-                selectedGamePath = openFileDialog.FileName;
-                PlayButton.IsEnabled = true; // Enable Play button after selecting a game
-                MessageBox.Show("Game selected: " + selectedGamePath, "Game Selected", MessageBoxButton.OK, MessageBoxImage.Information);
+                selectedGamePath = openFileDialog.FileName; // Set the selected game's path
+                PlayButton.IsEnabled = true; // Enable the Play button after adding a game
+                MessageBox.Show("Game added: " + selectedGamePath, "Game Added", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
         // Play Button Click (Launch Game)
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(selectedGamePath))
+            if (!string.IsNullOrEmpty(selectedGamePath))  // Ensure a game is selected
             {
                 try
                 {
-                    Process.Start(selectedGamePath);
+                    Process.Start(selectedGamePath);  // Launch the selected game
                 }
                 catch (Exception ex)
                 {
@@ -47,7 +47,7 @@ namespace GameLauncher
             }
             else
             {
-                MessageBox.Show("Please select a game first!", "No Game Selected", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Please add a game first!", "No Game Added", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

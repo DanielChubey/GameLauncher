@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "COedIYuNlk0=",
+  "dgSpecHash": "VVqKCl3kKQM=",
   "success": true,
   "projectFilePath": "C:\\Users\\DuNiK\\Desktop\\GameLauncher\\GameLauncher.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\DuNiK\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.2\\microsoft.win32.systemevents.9.0.2.nupkg.sha512",
+    "C:\\Users\\DuNiK\\.nuget\\packages\\system.drawing.common\\9.0.2\\system.drawing.common.9.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
