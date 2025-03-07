@@ -4,7 +4,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace GameLauncher
-{
+{   
     public partial class LoadingWindow : Window
     {
         private DispatcherTimer timer;
@@ -24,25 +24,36 @@ namespace GameLauncher
 
            
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(1200);
+            timer.Interval = TimeSpan.FromMilliseconds(60);
             timer.Tick += Timer_Tick;
             timer.Start();
+        }
+
+        
+        private void Grid_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (progress < 100)
             {
-                progress += 20;
+                
+                progress += 1;
 
                 
-                DoubleAnimation animation = new DoubleAnimation(progressBar.Value, progress, TimeSpan.FromSeconds(1));
+                DoubleAnimation animation = new DoubleAnimation(progressBar.Value, progress, TimeSpan.FromMilliseconds(50));
                 progressBar.BeginAnimation(System.Windows.Controls.Primitives.RangeBase.ValueProperty, animation);
 
-                
+               
                 if (statusIndex < statusMessages.Length)
                 {
-                    statusText.Text = statusMessages[statusIndex++];
+                    statusText.Text = statusMessages[statusIndex];
+                    if (progress >= (statusIndex + 1) * 20) 
+                    {
+                        statusIndex++;
+                    }
                 }
             }
             else
