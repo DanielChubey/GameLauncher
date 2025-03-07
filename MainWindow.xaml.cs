@@ -7,38 +7,38 @@ namespace GameLauncher
 {
     public partial class MainWindow : Window
     {
-        private string selectedGamePath = "";  // Holds the selected game path
+        private string selectedGamePath = ""; 
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        // Add Game Button Click (Functionality same as Select Game)
+        
         private void AddGame_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = "Executable Files (*.exe)|*.exe",  // Filters only executable files
+                Filter = "Executable Files (*.exe)|*.exe", 
                 Title = "Select a Game to Add"
             };
 
             if (openFileDialog.ShowDialog() == true)
             {
-                selectedGamePath = openFileDialog.FileName; // Set the selected game's path
-                PlayButton.IsEnabled = true; // Enable the Play button after adding a game
+                selectedGamePath = openFileDialog.FileName; 
+                PlayButton.IsEnabled = true;
                 MessageBox.Show("Game added: " + selectedGamePath, "Game Added", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
-        // Play Button Click (Launch Game)
+       
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(selectedGamePath))  // Ensure a game is selected
+            if (!string.IsNullOrEmpty(selectedGamePath))  
             {
                 try
                 {
-                    Process.Start(selectedGamePath);  // Launch the selected game
+                    Process.Start(selectedGamePath); 
                 }
                 catch (Exception ex)
                 {

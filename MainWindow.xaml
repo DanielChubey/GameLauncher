@@ -5,16 +5,16 @@
         Background="#1A1A1A">
 
     <Grid>
-        <!-- Define two columns: one for sidebar and one for main content -->
+      
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/> <!-- Sidebar width -->
-            <ColumnDefinition Width="*"/>   <!-- Main content area -->
+            <ColumnDefinition Width="200"/> 
+            <ColumnDefinition Width="*"/>  
         </Grid.ColumnDefinitions>
 
-        <!-- Sidebar -->
+        
         <Grid x:Name="Sidebar" Background="#1A1A1A" VerticalAlignment="Stretch" Grid.Column="0">
             <StackPanel>
-                <!-- Home Button -->
+               
                 <Button Content="Home"
                         Width="200" Height="50"
                         HorizontalAlignment="Left"
@@ -42,7 +42,7 @@
                     </Button.Template>
                 </Button>
 
-                <!-- Settings Button -->
+               
                 <Button Content="Settings"
                         Width="200" Height="50"
                         HorizontalAlignment="Left"
@@ -70,7 +70,7 @@
                     </Button.Template>
                 </Button>
 
-                <!-- Add Game Button (Styled Like Select Game) -->
+               
                 <Button Content="Add Game"
                         Width="200" Height="50"
                         HorizontalAlignment="Left"
@@ -101,7 +101,7 @@
             </StackPanel>
         </Grid>
 
-        <!-- Main Content (Right side) -->
+      
         <Grid Grid.Column="1">
             <!-- Title -->
             <TextBlock Text="Welcome to the Game Launcher!"
@@ -111,7 +111,7 @@
                        Foreground="White"
                        Margin="0,20,0,0"/>
 
-            <!-- Play Button (Initially Disabled) -->
+           
             <Button x:Name="PlayButton"
                     Content="Play"
                     Width="150" Height="50"
