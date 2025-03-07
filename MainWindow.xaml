@@ -5,31 +5,65 @@
         Background="#1A1A1A">
 
     <Grid>
-        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" Foreground="White" Margin="0,20,0,0">
-            Welcome to the Game Launcher!
-        </TextBlock>
+        <!-- Title -->
+        <TextBlock Text="Welcome to the Game Launcher!"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   FontSize="24"
+                   Foreground="White"
+                   Margin="0,20,0,0"/>
 
-        <!-- Play Button with rounded corners and hover effect -->
-        <Button Content="Play" Width="150" Height="50" 
-                HorizontalAlignment="Right" VerticalAlignment="Bottom" 
-                Margin="0,0,30,30" FontSize="18" 
-                Foreground="White" Click="PlayButton_Click">
+        <!-- Select Game Button -->
+        <Button Content="Select Game"
+                Width="150" Height="50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="18"
+                Foreground="White"
+                Click="SelectGame_Click">
 
             <Button.Template>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="border" Background="#9B59B6" BorderBrush="#8E44AD" 
+                    <Border x:Name="border" Background="#3498DB" BorderBrush="#2980B9"
                             BorderThickness="2" CornerRadius="15">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        <!-- Hover Effect -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#2980B9"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#1F618D"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Play Button (Initially Disabled) -->
+        <Button x:Name="PlayButton"
+                Content="Play"
+                Width="150" Height="50"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0,0,30,30"
+                FontSize="18"
+                Foreground="White"
+                IsEnabled="False"
+                Click="PlayButton_Click">
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" Background="#9B59B6" BorderBrush="#8E44AD"
+                            BorderThickness="2" CornerRadius="15">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
-                            <Setter TargetName="border" Property="BorderBrush" Value="#9B59B6"/>
                         </Trigger>
-
-                        <!-- Click Effect -->
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="border" Property="Background" Value="#7D3C98"/>
                         </Trigger>
