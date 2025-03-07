@@ -5,7 +5,8 @@
         WindowStyle="None" ResizeMode="CanMinimize" Background="#111"
         AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     
-    <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown"> 
+    <!-- Enables dragging -->
+    <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">  
        
         <Border Background="#1A1A1A" CornerRadius="10" Padding="10">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">

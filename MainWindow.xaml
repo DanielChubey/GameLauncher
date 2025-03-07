@@ -1,11 +1,42 @@
 ﻿<Window x:Class="GameLauncher.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Main Window" Height="450" Width="800">
+        Title="Main Window" Height="450" Width="800"
+        Background="#1A1A1A">
+
     <Grid>
-        
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">
+        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" Foreground="White" Margin="0,20,0,0">
             Welcome to the Game Launcher!
         </TextBlock>
+
+        <!-- Play Button with rounded corners and hover effect -->
+        <Button Content="Play" Width="150" Height="50" 
+                HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                Margin="0,0,30,30" FontSize="18" 
+                Foreground="White" Click="PlayButton_Click">
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" Background="#9B59B6" BorderBrush="#8E44AD" 
+                            BorderThickness="2" CornerRadius="15">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <!-- Hover Effect -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#8E44AD"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="#9B59B6"/>
+                        </Trigger>
+
+                        <!-- Click Effect -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#7D3C98"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
     </Grid>
 </Window>

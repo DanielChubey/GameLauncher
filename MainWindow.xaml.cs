@@ -8,5 +8,12 @@ namespace GameLauncher
         {
             InitializeComponent();
         }
+
+        // Event handler for Play button click
+        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Add code here to handle the button click (e.g., launch the game, open another window, etc.)
+            MessageBox.Show("Play button clicked!");
+        }
     }
 }
