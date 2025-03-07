@@ -22,7 +22,7 @@ namespace GameLauncher
         {
             InitializeComponent();
 
-            // Timer for smooth progress
+           
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(1200);
             timer.Tick += Timer_Tick;
@@ -33,13 +33,13 @@ namespace GameLauncher
         {
             if (progress < 100)
             {
-                progress += 20; // Increase progress smoothly
+                progress += 20;
 
-                // Animate the progress bar
+                
                 DoubleAnimation animation = new DoubleAnimation(progressBar.Value, progress, TimeSpan.FromSeconds(1));
                 progressBar.BeginAnimation(System.Windows.Controls.Primitives.RangeBase.ValueProperty, animation);
 
-                // Update the status text
+                
                 if (statusIndex < statusMessages.Length)
                 {
                     statusText.Text = statusMessages[statusIndex++];
@@ -49,7 +49,7 @@ namespace GameLauncher
             {
                 timer.Stop();
 
-                // Smoothly fade out the loading screen
+                
                 DoubleAnimation fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromSeconds(1));
                 fadeOut.Completed += (s, a) =>
                 {
