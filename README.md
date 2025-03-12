@@ -16,7 +16,7 @@ A simple GameLauncher built with XAML and .NET It displays a loading bar, and me
 
 ### Installing
 
-* You can clone the repository by running:
+* You can clone the repository by running in your cmd/terminal:
 ```
 https://github.com/DanielChubey/GameLauncher.git
 ``` 
@@ -24,39 +24,21 @@ and then navigating to it by:
 ``` 
  cd GameLauncher
 ```
-* Any modifications needed to be made to files/folders
+* You also can download the repository by going to the [Home](https://github.com/DanielChubey/GameLauncher) and clicking on the code button and after this clicking on the Download ZIP 
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+* After you setup the project you need to launch the app by running in the cmd/terminal
 ```
-code blocks for commands
-```
+dotnet run
+ ```
 
 ## Help
 
-Any advise for common problems or issues.
+* If you need any help or want to share with me what you added to the project you can contact me using discord, here is my discord:
 ```
-command to run if program contains helper info
+mmmmaster21
 ```
 
-## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
 
