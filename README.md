@@ -6,5 +6,5 @@ A simple game launcher built with XAML and .NET. It displays a loading bar, game
 
 ### 1. Clone the Repository  
 ```sh
-git clone https://github.com/your-username/game-launcher.git  
+git clone https://github.com/DanielChubey/GameLauncher.git  
 cd game-launcher  
