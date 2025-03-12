@@ -1,10 +1,11 @@
-# Project Title
+# 🎮 Game Launcher
 
-Simple overview of use/purpose.
+A simple GameLauncher
+
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+A simple GameLauncher built with XAML and .NET It displays a loading bar, and messages ("Preparing game" and "Starting game") before launching the game.
 
 ## Getting Started
 
