@@ -17,7 +17,12 @@ A simple GameLauncher built with XAML and .NET It displays a loading bar, and me
 ### Installing
 
 * You can clone the repository by running:
-```https://github.com/DanielChubey/GameLauncher.git ``` and they navigating to it by ```cd GameLauncher ```
+```
+https://github.com/DanielChubey/GameLauncher.git
+``` and then navigating to it by: 
+``` 
+ cd GameLauncher
+```
 * Any modifications needed to be made to files/folders
 
 ### Executing program
