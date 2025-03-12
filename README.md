@@ -11,12 +11,13 @@ A simple GameLauncher built with XAML and .NET It displays a loading bar, and me
 
 ### Dependencies
 
-* Install [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.407-windows-x64-installer)  
-* Install [VS code] 
+* Install [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download)  
+* Install [VS Code](https://code.visualstudio.com/) or [VS 2022 Community](https://visualstudio.microsoft.com/vs/community/)
 
 ### Installing
 
-* How/where to download your program
+* You can clone the repository by running:
+```https://github.com/DanielChubey/GameLauncher.git ``` and they navigating to it by ```cd GameLauncher ```
 * Any modifications needed to be made to files/folders
 
 ### Executing program
