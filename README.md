@@ -3,7 +3,7 @@
 A simple GameLauncher
 
 
-## Description
+## 📃 Description
 
 A simple GameLauncher built with XAML and .NET It displays a loading bar, and messages ("Preparing game" and "Starting game") before launching the game.
 
@@ -11,7 +11,7 @@ A simple GameLauncher built with XAML and .NET It displays a loading bar, and me
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
+* https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.407-windows-x64-installer 
 * ex. Windows 10
 
 ### Installing
